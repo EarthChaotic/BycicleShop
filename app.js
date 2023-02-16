@@ -9,9 +9,6 @@ mongoose.connect(config.MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: 
 var errorHandler = require('./middleware/errorHandler')
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/users');
-var companyrouter = require('./routes/company')
-var StaffRouter = require('./routes/staff')
-var shopRouter = require('./routes/shop')
 var categoryRouter = require('./routes/category')
 
 
@@ -28,9 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/user', userRouter);
-app.use('/company', companyrouter)
-app.use('/staff',StaffRouter)
-app.use('/shop',shopRouter)
 app.use('/category',categoryRouter)
 app.use(errorHandler)
 

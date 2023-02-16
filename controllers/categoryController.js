@@ -64,6 +64,7 @@ exports.product = async (req,res,next) =>{
 
   const ProductWithPhoto = product.map( (product,index) =>{
     return{
+      id:product._id,
       name: product.product_name,
       quantity:product.quantity,
       price:product.price,
@@ -89,6 +90,7 @@ exports.product = async (req,res,next) =>{
 
 
   exports.Prodinsert = async (req, res, next) => {
+    
   try {
     const { product_name, price, category_id, quantity,photo } = req.body;
 
